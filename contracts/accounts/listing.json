@@ -17,7 +17,6 @@
             "$schema": "http://json-schema.org/draft-04/schema#",
             "description": "",
             "type": "object",
-            "required": true,
             "properties": {
                 "count": {
                     "title": "number of elements returned",
@@ -40,41 +39,52 @@
                         "properties": {
                             "id": {
                                 "type": "integer",
-                                "description": "identifier for an account"
+                                "title":"id",
+                                "description": "Unique object identifier"
                             },
                             "organization": {
                                 "type": "integer",
-                                "description": "reference for the organization in which the account belongs."
+                                "title": "organization",
+                                "description": "The ID of the organization that the account belongs to. (This is usually your organization ID)"
                             },
                             "balance": {
                                 "type": "number",
-                                "description": "the amount of credit available in the account"
+                                "title": "balance",
+                                "description": "The current account balance"
                             },
                             "currency": {
                                 "type": "string",
-                                "description": "the currency used for the account"
+                                "title": "currency",
+                                "description": "The account's currency code i.e. KES, UGX"
                             },
                             "status": {
                                 "type": "string",
-                                "description": "the status of the account"
+                                "title": "status",
+                                "description": "The account's status. One of: active or inactive",
+                                "enum": ["active", "inactive"]
                             },
                             "created": {
                                 "type": "string",
-                                "description": "the date the account was created"
+                                "title": "created",
+                                "description": "The date that the account was created, in the UTC timezone. Format: YYYY-MM-DDTHH:MM:SSZ"
                             },
                             "author": {
                                 "type": "integer",
-                                "description": "the reference to the author of the account"
+                                "title": "author",
+                                "description": "The ID of the user who created the account"
                             },
                             "modified": {
                                 "type": "string",
-                                "description": "the date the account was modified"
+                                "title": "modified",
+                                "description": "The date that the account was lased modified, in the UTC timezone. Format: YYYY-MM-DDTHH:MM:SSZ"
                             },
                             "updated_by": {
                                 "type": "integer",
-                                "description": "reference to the user who updated or modified the account"
+                                "title": "updated_by",
+                                "description": "The ID of the user who last updated the account"
                             }
-                        }
+                        },
+                        "required": ["id", "organization", "balance", "currency", "status", "created", "author", "modified", "updated_by"]
                     }
                 }
             }
