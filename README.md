@@ -19,7 +19,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Without installing as gem
+After checking out the repo, run `bin/setup` to install dependencies. and then run `bundle exec rake server:stub`
+This will run a local server on port `9000` providing stubs for the beyonic payment api. You can change the port by running `bundle exec rake server:stub:8080`.
+
+You can then make calls to the stub server as though you are working against the beyonic api it's self.
 
 ## Development
 
