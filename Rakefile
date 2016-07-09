@@ -8,7 +8,7 @@ namespace :server do
   DEFAULTS = {
         stdout: true,
         log_file: 'pacto.log',
-        strict: false,
+        strict: true,
         stub: true,
         live: false,
         generate: false,
