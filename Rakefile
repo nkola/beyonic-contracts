@@ -23,10 +23,11 @@ namespace :server do
 
   desc 'Run pacto server in stub, validating contracts'
   task :stub, [:port] do |task, args|
-    port = args[:port] || 8081
+    port = args[:port] || 9000
     server_options = DEFAULTS.clone()
     server_options[:stub] = true
 
+    puts "Listening on port #{port}"
     Pacto::Server::HTTP.run('0.0.0.0',port,server_options)
   end
 end

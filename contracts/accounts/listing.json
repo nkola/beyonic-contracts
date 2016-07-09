@@ -1,0 +1,116 @@
+{
+    "name": "listing accounts",
+    "request": {
+        "http_method": "GET",
+        "path": "/api/accounts",
+        "headers": {
+            "Accept": "application/json",
+            "Authorization": "Token token"
+        }
+    },
+    "response": {
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "status": 200,
+        "schema": {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "description": "",
+            "type": "object",
+            "required": true,
+            "properties": {
+                "count": {
+                    "title": "number of elements returned",
+                    "type": "number"
+                },
+                "next": {
+                    "title": "next",
+                    "description": "url to get the next set of items",
+                    "type": "string"
+                },
+                "previous": {
+                    "title": "previous",
+                    "description": "url to get the previous set of items",
+                    "type": "string"
+                },
+                "result": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer",
+                                "description": "identifier for an account"
+                            },
+                            "organization": {
+                                "type": "integer",
+                                "description": "reference for the organization in which the account belongs."
+                            },
+                            "balance": {
+                                "type": "number",
+                                "description": "the amount of credit available in the account"
+                            },
+                            "currency": {
+                                "type": "string",
+                                "description": "the currency used for the account"
+                            },
+                            "status": {
+                                "type": "string",
+                                "description": "the status of the account"
+                            },
+                            "created": {
+                                "type": "string",
+                                "description": "the date the account was created"
+                            },
+                            "author": {
+                                "type": "integer",
+                                "description": "the reference to the author of the account"
+                            },
+                            "modified": {
+                                "type": "string",
+                                "description": "the date the account was modified"
+                            },
+                            "updated_by": {
+                                "type": "integer",
+                                "description": "reference to the user who updated or modified the account"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "examples": {
+        "test": {
+            "request": {},
+            "response": {
+                "body": {
+                    "count": 2,
+                    "next": "https://app.beyonic.com/api/accounts?offset=10",
+                    "previous": null,
+                    "results": [{
+                        "id": 1146,
+                        "organization": 1,
+                        "balance": 200.0,
+                        "currency": "KES",
+                        "status": "active",
+                        "created": "2015-02-13T04:22:31Z",
+                        "author": 7,
+                        "modified": "2015-02-26T13:00:35Z",
+                        "updated_by": 1
+                    }, {
+                        "id": 1147,
+                        "organization": 1,
+                        "balance": 100.0,
+                        "currency": "UGX",
+                        "status": "active",
+                        "created": "2015-02-13T04:22:31Z",
+                        "author": 7,
+                        "modified": "2015-02-26T13:00:35Z",
+                        "updated_by": 1
+                    } ]
+                }
+            }
+        }
+    }
+}
