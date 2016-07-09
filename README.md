@@ -25,6 +25,9 @@ This will run a local server on port `9000` providing stubs for the beyonic paym
 
 You can then make calls to the stub server as though you are working against the beyonic api it's self.
 
+### Installed as gem
+This is a work in progress.
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
