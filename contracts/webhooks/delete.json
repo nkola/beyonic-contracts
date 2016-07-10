@@ -1,0 +1,29 @@
+{
+    "name": "create webhook",
+    "request": {
+        "http_method": "delete",
+        "path": "/api/webhooks/{id}",
+        "headers": {
+            "Authorization": "Token token"
+        }
+    },
+    "response": {
+        "status": 200
+    },
+    "examples": {
+        "default": {
+            "request": {
+                "body": {
+                    "event": "payment.status.changed",
+                    "target": "https://my.callback.url/"
+                }
+            },
+            "response": {
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "body": null
+            }
+        }
+    }
+}
